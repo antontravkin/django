@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from products.models import ProductCategory, Product
+
 # Create your views here.
 
 
@@ -15,50 +17,7 @@ def products(request):
     context = {
         'title': 'Каталог',
         'description': 'Каталог одежды для вас',
-        'products': [
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-            {
-                'image': '/static/vendor/img/products/Adidas-hoodie.png',
-                'name': 'Худи черного цвета с монограммами adidas Originals',
-                'price': '6090',
-                'description': 'Мягкая ткань для свитшотов. Стиль и комфорт - это образ жизни.'
-            },
-
-        ]
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all(),
     }
     return render(request, 'products/products.html', context)

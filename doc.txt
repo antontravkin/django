@@ -3,3 +3,8 @@ python3 manage.py runserver
 python3 manage.py startapp products
 python3 manage.py makemigrations
 python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py dumpdata products.ProductCategory > products/fixtures/categories.json
+python3 manage.py dumpdata products.Product > products/fixtures/products.json
+python3 manage.py loaddata products/fixtures/categories.json
+python3 manage.py loaddata products/fixtures/products.json
