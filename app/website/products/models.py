@@ -1,14 +1,12 @@
 from django.db import models
 
-# Create your models here.
-
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=128)
     discription = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 
 class Product(models.Model):
