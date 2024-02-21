@@ -10,5 +10,6 @@ disable = missing-function-docstring,
         mport-outside-toplevel,
         missing-docstring,
         unknown-option-value,
-        invalid-name
+        invalid-name,
+        unused-import
         
