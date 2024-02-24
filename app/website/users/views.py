@@ -1,8 +1,10 @@
 from django.core import files
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.contrib import auth, messages
+from products.models import Basket
 
 from django.shortcuts import render, HttpResponseRedirect
+
 from django.urls import reverse
 
 
@@ -48,7 +50,11 @@ def profile(request):
     else:
         form = UserProfileForm(instance=request.user)
 
-    context = {"title": "Store - Профиль", "form": form}
+    context = {
+        "title": "Store - Профиль",
+        "form": form,
+        "baskets": Basket.objects.all(),
+    }
     return render(request, "users/profile.html", context)
 
 
