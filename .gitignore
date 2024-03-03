@@ -163,7 +163,3 @@ cython_debug/
 .vscode/settings.json
 .vscode/launch.json
 
-
-.vscode/
-.vscode/settings.json
-.vscode/launch.json
